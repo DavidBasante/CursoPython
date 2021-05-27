@@ -1,0 +1,14 @@
+phrase = 'we are the cowboys, the true sons of freedom.'
+size_phrase = len(phrase)
+count = 0
+new_str = ''
+users_input = input('type a letter: ')
+
+while count < size_phrase:
+    letter = phrase[count]
+    if letter == users_input:
+        new_str += users_input.upper()
+    else:
+        new_str += letter
+    count += 1
+print(new_str)

@@ -1,0 +1,30 @@
+word_secret = 'Cuscuz'
+typed = []
+attempts = 10
+
+while True:
+    letter = input('Type a letter: ')
+    if len(letter) > 1:
+        print('Only one letter')
+        continue
+
+    typed.append(letter)
+    print(typed)
+
+    if letter in word_secret:
+        print(f'Good job!! letter "{letter}" exist in the Word Secret')
+    else:
+        print(f'Ops, the letter "{letter}" dont exist in the Word Secret. Try again!')
+        typed.pop()
+
+    secret_temporary = ''
+    for secret_letter in word_secret:
+        if secret_letter in typed:
+            secret_temporary += secret_letter
+        else:
+            secret_temporary += '*'
+    print(secret_temporary)
+
+    if secret_temporary == word_secret:
+        print(f'Congratulations! The word secret is {word_secret}.')
+        break
